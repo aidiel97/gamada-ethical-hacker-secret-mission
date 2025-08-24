@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Mission</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ff99;
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    #message {
+      font-size: 1.2rem;
+      white-space: pre-line;
+      border-right: 2px solid #00ff99;
+      padding-right: 5px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="message"></div>
+
+  <script>
+    const text = `Greetings, rookie agent...
+
+Your training has paid off. Now, a real mission awaits.
+
+Several of your teammates have been flooded with strange emails.
+The domains behind them seem... suspicious.
+
+Your task:
+Investigate one of that domains using the tools you learned today.
+
+Gather intelligence.
+Draw your conclusions.
+Report back to Dr. M.A.P.
+
+The team is counting on you.
+Good luck, Agent.`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("message").textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    typeWriter();
+  </script>
+</body>
+</html>
